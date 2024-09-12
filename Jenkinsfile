@@ -12,11 +12,11 @@ pipeline {
             }
         }
 
-        stage('Run Docker1111 Container') {
+        stage('Run Docker Container') {
             steps {
                 script {
                     // Run the container with docker-compose
-                    sh 'docker-compose up -d'
+                    sh 'docker-compose up 
                 }
             }
         }
