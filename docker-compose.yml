@@ -9,3 +9,4 @@ services:
     environment:
       - SPARK_MASTER=local
     command: ["spark-submit", "/opt/spark/app/word_count.py"]
+
