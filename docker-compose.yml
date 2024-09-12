@@ -1,5 +1,4 @@
-
-pipeline {
+  pipeline {
     agent any
 
     stages {
@@ -13,7 +12,7 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Run Docker Container--') {
             steps {
                 script {
                     // Run the container with docker-compose
@@ -36,7 +35,7 @@ pipeline {
     	success {
             script {
                 // Notify success to Slack
-                slackSend channel: '##spark', color: 'good', message: "Build SUCCESSFUL: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
+                slackSend channel: '#spark', color: 'good', message: "Build SUCCESSFUL: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
             }
         }
         failure {
